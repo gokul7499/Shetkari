@@ -38,11 +38,12 @@ function Navbar() {
               <Link className="nav-link" to="/about" onClick={handleNavItemClick}>About</Link>
             </li>
             <li className="nav-item mx-2">
-              <Link className="nav-link" to="/farming" onClick={handleNavItemClick}>Farming</Link>
-            </li>
-            <li className="nav-item mx-2">
               <Link className="nav-link" to="/internship" onClick={handleNavItemClick}>Internship</Link>
             </li>
+            <li className="nav-item mx-2">
+              <Link className="nav-link" to="/farming" onClick={handleNavItemClick}>Farming</Link>
+            </li>
+
             <li className="nav-item mx-2">
               <Link className="nav-link" to="/services" onClick={handleNavItemClick}>Services</Link>
             </li>

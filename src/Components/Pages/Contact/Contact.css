@@ -1,7 +1,6 @@
 .contact-container {
     padding: 10px;
     margin-top: 2.5cm;
-    overflow: auto; /* Allow scrolling if content overflows */
 }
 
 .btn.submitting {
@@ -42,7 +41,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 4cm;
     max-width: 1200px; /* Limit the width on large screens */
-    overflow: auto; /* Enable scrolling inside this element if necessary */
 }
 
 .contact-item {
