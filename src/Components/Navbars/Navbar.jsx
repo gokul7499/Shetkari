@@ -16,7 +16,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg fixed-top">
         <Link to="/">
-          <img className="navbar-brand ml-4 logo" src="\img\final_logo-removebg-preview.png" alt="Logo" />
+          <img className="navbar-brand ml-4 logo" src="\img\logo2-final.png" alt="Logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -41,7 +41,7 @@ function Navbar() {
               <Link className="nav-link" to="/farming" onClick={handleNavItemClick}>Farming</Link>
             </li>
             <li className="nav-item mx-2">
-              <Link className="nav-link" to="/intership" onClick={handleNavItemClick}>Internship</Link>
+              <Link className="nav-link" to="/internship" onClick={handleNavItemClick}>Internship</Link>
             </li>
             <li className="nav-item mx-2">
               <Link className="nav-link" to="/services" onClick={handleNavItemClick}>Services</Link>
