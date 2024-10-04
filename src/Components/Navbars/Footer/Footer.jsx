@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section logo-section">
           <img src="\img\final_logo-removebg-preview.png" alt="Royal Shetkari IT Company Logo" className="footer-logo" />
-          <p>Your trusted partner in technology.</p>
+          <p className='text-light'>Your trusted partner in technology.</p>
         </div>
 
         <div className="footer-section">
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Royal Shetkari IT Company. All rights reserved.</p>
+        <p className='text-light'>&copy; {new Date().getFullYear()} Royal Shetkari IT Company. All rights reserved.</p>
       </div>
     </footer>
   );
