@@ -2,9 +2,15 @@ import React from 'react';
 import './Home.css';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import About from '../About/About';
+import Farming from '../Farming/Farming';
+import Internship from '../Internship/Internship';
+import Services from '../Services/Services';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
   return (
+    <>
     <div className="homepage-container">
       <Carousel className="carousel-container" interval={3000} fade>
         <Carousel.Item>
@@ -52,7 +58,14 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
     </div>
+<About/>
+<Internship/>
+<Farming/>
+<Services/>
+<Contact/>
+    </>
   );
 };
 
