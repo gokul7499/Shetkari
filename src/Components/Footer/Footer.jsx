@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section logo-section">
-          <img src="img\logo2-final.png" alt="Royal Shetkari IT Company Logo" className="footer-logo" />
+          <img src="\img\final_logo-removebg-preview.png" alt="Royal Shetkari IT Company Logo" className="footer-logo" />
           <p>Your trusted partner in technology.</p>
         </div>
 
