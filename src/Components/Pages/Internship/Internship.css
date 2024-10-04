@@ -292,6 +292,9 @@ body, html {
       height: 500px;
     }
   }
+
+
+  
   .slider-container {
     text-align: center;
     padding: 30px 10px; 
@@ -331,7 +334,6 @@ body, html {
   
   .slide {
     min-width: 70%;
-    padding: 15px; 
     background-color: transparent;
     border-radius: 10px;
     color: white;
@@ -379,6 +381,11 @@ body, html {
   }
   
   
+
+
+
+
+
   /* / Responsive Styling / */
   @media (max-width: 768px) {
     .slider-container h2 {

@@ -1,31 +1,36 @@
 .contact-container {
     padding: 10px;
     margin-top: 2.5cm;
+    overflow: auto; /* Allow scrolling if content overflows */
 }
+
 .btn.submitting {
     background-color: #28a745; /* Change color to indicate loading */
     cursor: not-allowed; /* Change cursor when button is disabled */
-  }
-  
-  .success-message {
+}
+
+.success-message {
     color: #28a745; /* Green color for success message */
     font-weight: bold;
     margin-top: 10px;
-  }
-  
+}
+
 .contact-row {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+    gap: 10px; /* Add space between columns */
+    justify-content: center; /* Center the columns */
     margin-bottom: 20px;
 }
 
 .contact-column {
     flex: 1 1 300px; /* Minimum width for columns */
+    max-width: 500px; /* Max width for columns to avoid stretching */
     padding: 10px;
     margin: 0 8px;
 }
 
-.column:nth-child(odd) {
+.contact-column:nth-child(odd) {
     background-color: #f4f4f4;
 }
 
@@ -36,13 +41,16 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 4cm;
+    max-width: 1200px; /* Limit the width on large screens */
+    overflow: auto; /* Enable scrolling inside this element if necessary */
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    padding: 40px;
+    padding: 20px; /* Reduced padding for better spacing */
     border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap; /* Allow wrapping in smaller screens */
 }
 
 .contact-item:last-child {
@@ -69,6 +77,17 @@
     margin-bottom: 5px;
 }
 
+@media (max-width: 1024px) {
+    .contact-info {
+        margin-top: 3cm;
+        padding: 15px;
+    }
+
+    .contact-item {
+        padding: 30px;
+    }
+}
+
 @media (max-width: 600px) {
     .contact-row {
         flex-direction: column; /* Stack columns on small screens */
@@ -81,5 +100,15 @@
 
     .icon {
         margin-bottom: 10px;
+    }
+
+    .contact-column {
+        padding: 8px;
+        margin: 0;
+    }
+
+    .contact-info {
+        padding: 15px;
+        margin-top: 2cm;
     }
 }
