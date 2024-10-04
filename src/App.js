@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Farming from './Components/Pages/Farming/Farming';
 import Footer from './Components/Footer/Footer';
+import Internship from './Components/Pages/Internship/Internship';
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/farming" element={<Farming />} />
+        <Route path="/internship" element={<Internship />} />
 
         <Route path="/home" element={<Home/>}/>
 
