@@ -1,4 +1,3 @@
-// src/Home/Home.js
 import React from 'react';
 import './Home.css';
 import { Carousel } from 'react-bootstrap';
@@ -11,7 +10,7 @@ import Contact from '../Contact/Contact';
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(); // Using translation hook
 
   return (
     <>
@@ -20,13 +19,13 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="/img/people-with-laptops-office.jpg" 
+              src="/img/people-with-laptops-office.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
               <div className="caption-content">
                 <h1>{t('homepage.welcome')}</h1>
-                <p className='text-danger'>{t('homepage.innovating')}</p>
+                <p className="text-danger">{t('homepage.innovating')}</p>
                 <button className="carousel-button">{t('homepage.learn_more')}</button>
               </div>
             </Carousel.Caption>
@@ -35,13 +34,13 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="/img/people-with-laptops-office.jpg" 
+              src="/img/people-with-laptops-office.jpg"
               alt="Second slide"
             />
             <Carousel.Caption>
               <div className="caption-content">
                 <h1>{t('homepage.empowering')}</h1>
-                <p className='text-warning'>{t('homepage.web_dev')}</p>
+                <p className="text-warning">{t('homepage.web_dev')}</p>
                 <button className="carousel-button">{t('homepage.get_started')}</button>
               </div>
             </Carousel.Caption>
@@ -50,19 +49,21 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="/img/modern-equipped-computer-lab.jpg" 
+              src="/img/modern-equipped-computer-lab.jpg"
               alt="Third slide"
             />
             <Carousel.Caption>
               <div className="caption-content">
                 <h1>{t('homepage.grow_business')}</h1>
-                <p className='text-info'>{t('homepage.trusted_partner')}</p>
+                <p className="text-info">{t('homepage.trusted_partner')}</p>
                 <button className="carousel-button">{t('homepage.contact_us')}</button>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>
+
+      {/* Other components */}
       <About />
       <Internship />
       <Farming />

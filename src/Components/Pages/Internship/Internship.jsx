@@ -1,34 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import './Internship.css';
-import "@fontsource/poppins"; 
+import "@fontsource/poppins";
+import { useTranslation } from 'react-i18next';
 
 function Internship() {
+  const { t } = useTranslation();
+
   const handleEnrollNow = () => {
-    alert("Enroll Now clicked!");
+    alert(t('internship.enroll_now') + " clicked!");
   };
 
   const handleHowItWorks = () => {
-    alert("How It Works clicked!");
+    alert(t('internship.how_it_works') + " clicked!");
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      title: 'Real Experience',
-      content: 'Work remotely with one of 13,000 companies looking for ambitious talent like you.',
+      title: t('internship.real_experience'),
+      content: t('internship.real_experience_content'),
     },
     {
-      title: 'Coaching & Support',
-      content: 'You will be supported by a team of expert coaches to guide you towards career success.',
+      title: t('internship.coaching_support'),
+      content: t('internship.coaching_support_content'),
     },
     {
-      title: 'Award-Winning Courses',
-      content: 'Complement your internship with access to courses to build the skills that will set you apart.',
+      title: t('internship.award_winning_courses'),
+      content: t('internship.award_winning_courses_content'),
     },
     {
-      title: 'Tailored Internship',
-      content: 'Tell us what matters most to you, and we will match you with the right internship.',
+      title: t('internship.tailored_internship'),
+      content: t('internship.tailored_internship_content'),
     }
   ];
 
@@ -54,15 +57,15 @@ function Internship() {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="Give mt-5">
-            Give Yourself an <br />
-            <span className="highlight">Unbeatable<br /> Advantage</span>
+            {t('internship.give_yourself')} <br />
+            <span className="highlight">{t('internship.unbeatable_advantage')}</span>
           </h1>
           <p className="platform">
-            The only platform that guarantees real-world work experience across the globe.
+            {t('internship.platform_description')}
           </p>
           <div className="buttons">
-            <button className="enroll-btn" onClick={handleEnrollNow}>Enroll Now</button>
-            <button className="how-btn" onClick={handleHowItWorks}>How It Works</button>
+            <button className="enroll-btn" onClick={handleEnrollNow}>{t('internship.enroll_now')}</button>
+            <button className="how-btn" onClick={handleHowItWorks}>{t('internship.how_it_works')}</button>
           </div>
         </div>
         <div className="image-container">
@@ -76,17 +79,18 @@ function Internship() {
           <div className="shape shape-right"></div>
         </div>
         <div className="career-content">
-          <h2 className="Internship-h2">The Reality of Starting Your Career</h2>
+          <h2 className="Internship-h2">{t('internship.career_reality')}</h2>
           <p style={{ fontSize: '14px', fontFamily: "cursive" }}>
-            The need for work experience is essential, but getting a job can be tough. You need experience, but to gain experience, you need a job. 
-            Internships are competitive, with 80% of employers considering it a critical factor for recent graduates. So, what do you do?
+            {t('internship.career_description')}
           </p>
         </div>
       </div>
 
       <div className="slider-container">
-        <h2 style={{ fontWeight: 'bold', fontSize: '45px', color: 'white' }}>The Answer? <span className="highlight">Virtual Internships</span></h2>
-        <p style={{ color: 'white' }}>Find global work experience in any field or region with Virtual Internships, the No. 1 platform for remote internships.</p>
+        <h2 style={{ fontWeight: 'bold', fontSize: '45px', color: 'white' }}>
+          {t('internship.virtual_internships')} <span className="highlight">{t('internship.virtual_internships_description')}</span>
+        </h2>
+        <p style={{ color: 'white' }}>{t('internship.virtual_internships_description')}</p>
 
         <div className="slider">
           <button className="prev-btn" onClick={prevSlide}>❮</button>
@@ -96,7 +100,6 @@ function Internship() {
           </div>
           <button className="next-btn" onClick={nextSlide}>❯</button>
         </div>
-
         <div className="dots">
           {slides.map((_, index) => (
             <span
@@ -110,34 +113,31 @@ function Internship() {
 
       <div className="launch-career-container">
         <h2 className="title">
-          Launch <span className="highlight">Your Career</span>
+          {t('internship.launch_your_career')}
         </h2>
         <p className="subtitle">
-          With Virtual Internships, you’ll gain valuable skills and knowledge from top companies
-          worldwide, all from the comfort of your own home. Your Virtual Internship is like an extended interview, with major growth and learning outcomes and the potential for further opportunities upon completion.
+          {t('internship.launch_description')}
         </p>
         <div className="stats-container">
           <div className="stat-box">
             <h3 className="stat-number purple">250k+</h3>
-            <p className="stat-title">Global Internships</p>
-            <p className="stat-subtitle">Available Now and Growing</p>
+            <p className="stat-title">{t('internship.global_internships')}</p>
+            <p className="stat-subtitle">{t('internship.internships_available')}</p>
           </div>
           <div className="stat-box">
             <h3 className="stat-number teal">80+</h3>
-            <p className="stat-title">Countries</p>
-            <p className="stat-subtitle">Internships Available Worldwide</p>
+            <p className="stat-title">{t('internship.countries')}</p>
+            <p className="stat-subtitle">{t('internship.internships_worldwide')}</p>
           </div>
           <div className="stat-box">
             <h3 className="stat-number red">2</h3>
-            <p className="stat-title">One to One</p>
-            <p className="stat-subtitle">Professional Career Coaching Calls</p>
+            <p className="stat-title">{t('internship.professional_coaching')}</p>
+            <p className="stat-subtitle">{t('internship.coaching_calls')}</p>
           </div>
           <div className="stat-box">
             <h3 className="stat-number yellow">1 in 4</h3>
-            <p className="stat-title">Interns</p>
-            <p className="stat-subtitle">
-              Offered Further Opportunities Immediately Upon Completion
-            </p>
+            <p className="stat-title">{t('internship.interns')}</p>
+            <p className="stat-subtitle">{t('internship.further_opportunities')}</p>
           </div>
         </div>
       </div>

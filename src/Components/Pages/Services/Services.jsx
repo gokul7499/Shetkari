@@ -1,7 +1,10 @@
 import React from 'react';
 import './Services.css';
+import { useTranslation } from 'react-i18next';
 
 function Services() {
+  const { t } = useTranslation();
+  
   const img1 = process.env.PUBLIC_URL + '/services/img1.jpg';
   const img2 = process.env.PUBLIC_URL + '/services/img2.jpg';
   const img3 = process.env.PUBLIC_URL + '/services/img3.jpg';
@@ -11,59 +14,56 @@ function Services() {
   const img7 = process.env.PUBLIC_URL + '/services/img7.jpg';
 
   return (
-      
-<>
-      <div className=' text-center py-5 mt-2'>
-        <h3 className="display-5  mt-5">Services</h3>
-
+    <>
+      <div className='text-center py-5 mt-2'>
+        <h3 className="display-5 mt-5">{t('services.title')}</h3>
       </div>
-          <div className="services-container">
-
-      <section className="services-section">
-        <h2 className='Our-Services'>Our Services</h2>
-        <div className="services-grid mt-5">
-          <div className="service-card">
-            <img src={img1} alt="Web Development" />
-            <h3>Web Development</h3>
-            <p>Creating responsive, high-performing websites for your business needs...</p>
+      <div className="services-container">
+        <section className="services-section">
+          <h2 className='Our-Services'>{t('services.our_services')}</h2>
+          <div className="services-grid mt-5">
+            <div className="service-card">
+              <img src={img1} alt={t('services.web_development.title')} />
+              <h3>{t('services.web_development.title')}</h3>
+              <p>{t('services.web_development.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={img2} alt={t('services.mobile_app_development.title')} />
+              <h3>{t('services.mobile_app_development.title')}</h3>
+              <p>{t('services.mobile_app_development.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={img3} alt={t('services.digital_marketing.title')} />
+              <h3>{t('services.digital_marketing.title')}</h3>
+              <p>{t('services.digital_marketing.description')}</p>
+            </div>
           </div>
-          <div className="service-card">
-            <img src={img2} alt="Mobile App Development" />
-            <h3>Mobile App Development</h3>
-            <p>Mobile app development is a dynamic process focused on creating apps...</p>
+        </section>
+        <section className="services-section">
+          <div className="services-grid">
+            <div className="service-card">
+              <img src={img4} alt={t('services.it_services.title')} />
+              <h3>{t('services.it_services.title')}</h3>
+              <p>{t('services.it_services.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={img5} alt={t('services.organic_products.title')} />
+              <h3>{t('services.organic_products.title')}</h3>
+              <p>{t('services.organic_products.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={img6} alt={t('services.soil_health_management.title')} />
+              <h3>{t('services.soil_health_management.title')}</h3>
+              <p>{t('services.soil_health_management.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={img7} alt={t('services.internship_opportunities.title')} />
+              <h3>{t('services.internship_opportunities.title')}</h3>
+              <p>{t('services.internship_opportunities.description')}</p>
+            </div>
           </div>
-          <div className="service-card">
-            <img src={img3} alt="Digital Marketing" />
-            <h3>Digital Marketing</h3>
-            <p>Boosting your brand's presence with targeted digital strategies...</p>
-          </div>
-        </div>
-      </section>
-      <section className="services-section">
-        <div className="services-grid">
-          <div className="service-card">
-            <img src={img4} alt="IT Services" />
-            <h3>IT Services</h3>
-            <p>Innovative digital solutions to enhance agricultural productivity...</p>
-          </div>
-          <div className="service-card">
-            <img src={img5} alt="Organic Products" />
-            <h3>Organic Products</h3>
-            <p>A range of organic fertilizers and crops available for purchase...</p>
-          </div>
-          <div className="service-card">
-            <img src={img6} alt="Soil Health Management" />
-            <h3>Soil Health Management</h3>
-            <p>Soil health is the foundation of sustainable agriculture...</p>
-          </div>
-          <div className="service-card">
-            <img src={img7} alt="Internship Opportunities" />
-            <h3>Internship Opportunities</h3>
-            <p>Practical technology-focused internships for students...</p>
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
     </>
   );
 }
