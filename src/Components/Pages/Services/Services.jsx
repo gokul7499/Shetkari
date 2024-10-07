@@ -11,11 +11,18 @@ function Services() {
   const img7 = process.env.PUBLIC_URL + '/services/img7.jpg';
 
   return (
-    <div className="services-container">
-      <h1 className="services-mt">Services</h1>
+      
+<>
+      <div className='farming-empowering text-center py-5 mt-2'>
+        <h3 className="display-5  mt-5">Services</h3>
+        <p className="Contact-Royal highlight">Royal Shetkari IT Company</p>
+
+      </div>
+          <div className="services-container">
+
       <section className="services-section">
         <h2 className='Our-Services'>Our Services</h2>
-        <div className="services-grid">
+        <div className="services-grid mt-5">
           <div className="service-card">
             <img src={img1} alt="Web Development" />
             <h3>Web Development</h3>
@@ -58,6 +65,7 @@ function Services() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 

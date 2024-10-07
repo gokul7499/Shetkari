@@ -1,0 +1,79 @@
+.farming-img{
+width: 90%;
+height: 10%;
+}
+.display-5{
+    font-weight: bold;
+    color: white;
+}
+/* Farming.css */
+
+/* Styling for the empowering section */
+.farming-empowering {
+    background-color: black;
+    width: 100%;
+    margin: 0;  
+    padding: 0; /* Removes any default padding */
+}
+
+
+  
+  .farming-purpose {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Card styling */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Add shadow effect */
+    background-color: #e0f7fa; /* Change background color on hover */
+  }
+  
+  .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.1); /* Zoom the image slightly on hover */
+  }
+  
+  .card-body {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #00796b;
+    margin-bottom: 15px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Button styling */
+  .btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #004d40; /* Change button color on hover */
+  }
+  
+  
