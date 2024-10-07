@@ -1,6 +1,10 @@
 .contact-container {
     padding: 10px;
-    margin-top: 2.5cm;
+    margin-top: 0.3cm;
+}
+
+.Contact-Royal {
+    font-size: 15px;
 }
 
 .btn.submitting {
@@ -16,7 +20,7 @@
 
 .contact-row {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     gap: 10px; /* Add space between columns */
     justify-content: center; /* Center the columns */
     margin-bottom: 20px;
@@ -25,12 +29,8 @@
 .contact-column {
     flex: 1 1 300px; /* Minimum width for columns */
     max-width: 500px; /* Max width for columns to avoid stretching */
-    padding: 10px;
+    padding: 0;
     margin: 0 8px;
-}
-
-.contact-column:nth-child(odd) {
-    background-color: #f4f4f4;
 }
 
 .contact-info {
@@ -39,7 +39,6 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 4cm;
     max-width: 1200px; /* Limit the width on large screens */
 }
 
@@ -48,7 +47,7 @@
     align-items: center;
     padding: 20px; /* Reduced padding for better spacing */
     border-bottom: 1px solid #e0e0e0;
-    flex-wrap: wrap; /* Allow wrapping in smaller screens */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .contact-item:last-child {
@@ -77,12 +76,11 @@
 
 @media (max-width: 1024px) {
     .contact-info {
-        margin-top: 3cm;
         padding: 15px;
     }
 
     .contact-item {
-        padding: 30px;
+        padding: 15px; /* Reduced padding for better mobile fit */
     }
 }
 
@@ -107,6 +105,5 @@
 
     .contact-info {
         padding: 15px;
-        margin-top: 2cm;
     }
 }

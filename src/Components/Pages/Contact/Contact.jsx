@@ -74,7 +74,7 @@ function Contact() {
       formDataToSend.append("access_key", "3086c577-5b4f-41b1-a79e-0810fdc7a167");
 
       try {
-        const response = await fetch("https://api.web3forms.com/submit", {
+        const response = await fetch("http://192.168.137.160:3000/api/contactus", {
           method: "POST",
           body: formDataToSend,
         });
@@ -113,10 +113,18 @@ function Contact() {
 
 
   return (
+    <>
+    <div className='farming-empowering text-center py-5'>
+    <h3 className="display-5  mt-5">Contact Us</h3>
+    <p className="Contact-Royal highlight">Royal Shetkari IT Company</p>
+
+  </div>
     <div class="container contact-container">
       <div className='text-center'>
-        <h5>Contact Us Royal Shetkari IT Company</h5>
-        <p>If you have any queries related to our IT services, please contact us by filling out the form below or call us at the provided number.</p>
+      
+   
+        <p >If you have any queries related to our IT services, please contact us by filling out the form below or call us at the provided number.</p>
+     
       </div>
       <div class="row contact-row">
         <div className="contact-column">
@@ -231,6 +239,7 @@ function Contact() {
         </div>
 
         <div className="contact-column">
+          
           <div class="contact-info">
             <div class="contact-item">
               <div class="icon">
@@ -264,6 +273,7 @@ function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

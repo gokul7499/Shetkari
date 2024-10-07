@@ -53,7 +53,7 @@ function Internship() {
     <div>
       <div className="hero-section">
         <div className="hero-content">
-          <h1 className="Give">
+          <h1 className="Give mt-5">
             Give Yourself an <br />
             <span className="highlight">Unbeatable<br /> Advantage</span>
           </h1>

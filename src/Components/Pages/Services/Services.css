@@ -1,24 +1,18 @@
-/* Container for services section */
 .services-container {
     padding: 20px;
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 2.2cm;
+   
+    margin-top: 0.5cm;
   }
   .Our-Services{
     font-weight: bold;
     
   }
   
-  /* Title styling */
   .services-mt {
-    font-size: 30px;
     color: #333;
     text-align: center;
-    font-family: 'Arial', sans-serif;
     margin-bottom: 40px;
   }
   
@@ -29,7 +23,6 @@
     margin-top: -30px;
   }
   
-  /* Flex layout for services */
   .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +30,6 @@
     gap: 20px;
   }
   
-  /* Styling for individual service cards */
   .service-card {
     flex: 1 1 calc(33.33% - 40px);
     max-width: calc(33.33% - 40px);
@@ -64,12 +56,21 @@
   }
   
   /* Hover effect for service cards */
-  .service-card:hover {
-    box-shadow: 10px 15px 24px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-    background-color: #f1f1f1;
-  }
-  
+ /* Hover effect for service cards */
+ .service-card:hover {
+  box-shadow: 10px 15px 24px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Slight zoom effect */
+  background-color: lawngreen; /* Hover background color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Change text color on hover */
+.service-card:hover h3,
+.service-card:hover p {
+  color: red; /* Text color white on hover */
+}
+
+
   /* Circular image styling */
   .service-card img {
     width: 100px;

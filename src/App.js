@@ -7,7 +7,7 @@ import Contact from './Components/Pages/Contact/Contact';
 import Services from './Components/Pages/Services/Services';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import "./App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Farming from './Components/Pages/Farming/Farming';
