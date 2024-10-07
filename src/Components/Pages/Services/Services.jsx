@@ -13,9 +13,8 @@ function Services() {
   return (
       
 <>
-      <div className='farming-empowering text-center py-5 mt-2'>
+      <div className=' text-center py-5 mt-2'>
         <h3 className="display-5  mt-5">Services</h3>
-        <p className="Contact-Royal highlight">Royal Shetkari IT Company</p>
 
       </div>
           <div className="services-container">

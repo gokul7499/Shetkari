@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,20 +20,30 @@ function Contact() {
     contactNumber: '',
     emailAddress: '',
     city: '',
-    taluka: '',
+    dist: '',
     pincode: ''
   });
 
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false); // New state for submission status
-  const [successMessage, setSuccessMessage] = useState(''); // New state for success message
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
+    const { id, value } = e.target;
 
-  const handlePhoneChange = (value) => {
-    setFormData({ ...formData, contactNumber: value });
+    if (id === 'contactNumber' || id === 'pincode') {
+      const numericValue = value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+      if (id === 'pincode' && numericValue.length <= 6) { // Limit pincode to 6 digits
+        setFormData({ ...formData, [id]: numericValue });
+      } else if (id === 'contactNumber' && numericValue.length <= 10) { // Limit contact number to 10 digits
+        setFormData({ ...formData, [id]: numericValue });
+      }
+    } else if (id === 'customerName' || id === 'city' || id === 'dist') {
+      const alphabeticValue = value.replace(/[^a-zA-Z\s]/g, ''); // Allow only letters and spaces
+      setFormData({ ...formData, [id]: alphabeticValue });
+    } else {
+      setFormData({ ...formData, [id]: value });
+    }
   };
 
   const validateForm = () => {
@@ -41,21 +52,25 @@ function Contact() {
     if (!formData.customerName.trim()) {
       newErrors.customerName = 'Customer name is required';
     }
-    if (!formData.contactNumber) {
+    if (!formData.contactNumber.trim()) {
       newErrors.contactNumber = 'Contact number is required';
+    } else if (formData.contactNumber.length !== 10) {
+      newErrors.contactNumber = 'Contact number must be exactly 10 digits';
     }
     if (!formData.city.trim()) {
       newErrors.city = 'City is required';
     }
-    if (!formData.taluka.trim()) {
-      newErrors.taluka = 'Taluka is required';
+    if (!formData.dist.trim()) {
+      newErrors.dist = 'District is required';
     }
     if (!formData.pincode.trim()) {
       newErrors.pincode = 'Pincode is required';
+    } else if (formData.pincode.length !== 6) {
+      newErrors.pincode = 'Pincode must be exactly 6 digits'; // Validate pincode length
     }
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(formData.emailAddress)) {
-      newErrors.emailAddress = 'Please enter a valid email address';
+      newErrors.emailAddress = 'Invalid email address'; // Add error for email validation
     }
 
     setErrors(newErrors);
@@ -67,25 +82,23 @@ function Contact() {
 
     if (validateForm()) {
       toast.info("Sending...");
-      setIsSubmitting(true); // Set submitting state to true
+      setIsSubmitting(true);
 
-      const formDataToSend = new FormData();
-      Object.keys(formData).forEach(key => formDataToSend.append(key, formData[key]));
-      formDataToSend.append("access_key", "3086c577-5b4f-41b1-a79e-0810fdc7a167");
+      const formDataToSend = {
+        ...formData,
+        access_key: "3086c577-5b4f-41b1-a79e-0810fdc7a167"
+      };
 
       try {
-        const response = await fetch("http://192.168.137.160:3000/api/contactus", {
-          method: "POST",
-          body: formDataToSend,
-        });
+        const response = await axios.post("http://192.168.221.191:3000/api/contactus", formDataToSend);
 
-        const data = await response.json();
+        console.log("Response data:", response.data);
 
-        if (data.success) {
+        if (response.data.success) {
           toast.dismiss();
           setTimeout(() => {
-            toast.success("Form Submitted Successfully");
-            setSuccessMessage("Thank you, " + formData.customerName + "! Your inquiry has been submitted.");
+            toast.success("Contact data saved successfully!");
+            setSuccessMessage(`Thank you, ${formData.customerName}! Your inquiry has been submitted. Our team will connect with you.`);
           }, 1000);
 
           setFormData({
@@ -93,154 +106,152 @@ function Contact() {
             contactNumber: '',
             emailAddress: '',
             city: '',
-            taluka: '',
+            dist: '',
             pincode: ''
           });
         } else {
+          console.error("Error response:", response.data.message);
           toast.dismiss();
-          toast.error(`Error: ${data.message}`);
+          toast.error(`Error: ${response.data.message}`);
         }
       } catch (error) {
+        console.error("Error occurred during submission:", error);
         toast.dismiss();
-        toast.error("An error occurred. Please try again.");
+        toast.error("This user is already registered.");
       } finally {
-        setIsSubmitting(false); // Reset submitting state
+        setIsSubmitting(false);
       }
     } else {
       toast.error("Please fix the errors in the form.");
     }
   };
 
-
   return (
     <>
-    <div className='farming-empowering text-center py-5'>
-    <h3 className="display-5  mt-5">Contact Us</h3>
-    <p className="Contact-Royal highlight">Royal Shetkari IT Company</p>
-
-  </div>
-    <div class="container contact-container">
-      <div className='text-center'>
-      
-   
-        <p >If you have any queries related to our IT services, please contact us by filling out the form below or call us at the provided number.</p>
-     
+      <div className='text-center py-5'>
+        <h3 className="display-5 mt-5">Contact Us</h3>
+        <p>If you have any queries related to our IT services, please contact us by filling out the form below or call us at the provided number.</p>
       </div>
-      <div class="row contact-row">
-        <div className="contact-column">
-          <div className="form-main">
-            <ToastContainer />
-            <div className="container form-size my-5">
-              <img
-                src='https://i.postimg.cc/G25Fvy5s/icons8-back-48.png'
-                alt="Back"
-                onClick={handleBookNowClick}
-                style={{ cursor: 'pointer', marginBottom: '20px' }}
-              />
+      <div className="container contact-container">
+        <div className="row contact-row">
+          <div className="contact-column">
+            <div className="form-main">
+              <ToastContainer />
+              <div className="container form-size  ">
+                <img 
+                  src='https://i.postimg.cc/G25Fvy5s/icons8-back-48.png'
+                  alt="Back"
+                  onClick={handleBookNowClick}
+                  style={{ cursor: 'pointer', marginBottom: '20px' }}
+                />
+                <h2 className="text-center">Quick Inquiry</h2>
+                <form className="p-4 shadow rounded form-container" onSubmit={handleSubmit}>
+                  <div className="form-row mb-3">
+                    <div className="col-12">
+                      <label htmlFor="customerName">Name</label>
+                      <input
+                        type="text"
+                        className={`form-control ${errors.customerName ? 'is-invalid' : ''}`}
+                        id="customerName"
+                        placeholder="Enter your name"
+                        value={formData.customerName}
+                        onChange={handleChange}
+                      />
+                      {errors.customerName && <div className="invalid-feedback">{errors.customerName}</div>}
+                    </div>
+                  </div>
 
-              <h2 className="text-center mb-4">Quick Inquiry</h2>
-              <form className="p-4 shadow rounded form-container" onSubmit={handleSubmit}>
-                <div className="form-row mb-3">
-                  <div className="col-12">
-                    <label htmlFor="customerName">Name</label>
-                    <input
-                      type="text"
-                      className={`form-control ${errors.customerName ? 'is-invalid' : ''}`}
-                      id="customerName"
-                      placeholder="Enter your name"
-                      value={formData.customerName}
-                      onChange={handleChange}
-                    />
-                    {errors.customerName && <div className="invalid-feedback">{errors.customerName}</div>}
+                  <div className="form-row mb-3">
+                    <div className="col-12 col-md-6">
+                      <label htmlFor="contactNumber">Contact Number</label>
+                      <input
+                        type="tel"
+                        className={`form-control ${errors.contactNumber ? 'is-invalid' : ''}`}
+                        id="contactNumber"
+                        placeholder="Enter contact number"
+                        value={formData.contactNumber}
+                        onChange={handleChange}
+                        maxLength={10} // Limit input length to 10 digits
+                      />
+                      {errors.contactNumber && <div className="invalid-feedback">{errors.contactNumber}</div>}
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <label htmlFor="emailAddress">Email Address</label>
+                      <input
+                        type="email"
+                        className={`form-control ${errors.emailAddress ? 'is-invalid' : ''}`}
+                        id="emailAddress"
+                        placeholder="Enter email address"
+                        value={formData.emailAddress}
+                        onChange={handleChange}
+                      />
+                      {errors.emailAddress && <div className="invalid-feedback">{errors.emailAddress}</div>}
+                    </div>
                   </div>
-                </div>
 
-                <div className="form-row mb-3">
-                  <div className="col-12 col-md-6">
-                    <label htmlFor="contactNumber">Contact Number</label>
-                    <input
-                      type="tel"
-                      className={`form-control ${errors.contactNumber ? 'is-invalid' : ''}`}
-                      id="contactNumber"
-                      value={formData.contactNumber}
-                      onChange={handlePhoneChange}
-                    />
-                    {errors.contactNumber && <div className="invalid-feedback">{errors.contactNumber}</div>}
+                  <div className="form-row mb-3">
+                    <div className="col-12">
+                      <label htmlFor="city">City</label>
+                      <input
+                        type="text"
+                        className={`form-control ${errors.city ? 'is-invalid' : ''}`}
+                        id="city"
+                        placeholder="Enter your city"
+                        value={formData.city}
+                        onChange={handleChange}
+                      />
+                      {errors.city && <div className="invalid-feedback">{errors.city}</div>}
+                    </div>
                   </div>
-                  <div className="col-12 col-md-6">
-                    <label htmlFor="emailAddress">Email Address</label>
-                    <input
-                      type="email"
-                      className={`form-control ${errors.emailAddress ? 'is-invalid' : ''}`}
-                      id="emailAddress"
-                      placeholder="Enter email address"
-                      value={formData.emailAddress}
-                      onChange={handleChange}
-                    />
-                    {errors.emailAddress && <div className="invalid-feedback">{errors.emailAddress}</div>}
-                  </div>
-                </div>
 
-                <div className="form-row mb-3">
-                  <div className="col-12">
-                    <label htmlFor="city">City</label>
-                    <input
-                      type="text"
-                      className={`form-control ${errors.city ? 'is-invalid' : ''}`}
-                      id="city"
-                      placeholder="Enter city"
-                      value={formData.city}
-                      onChange={handleChange}
-                    />
-                    {errors.city && <div className="invalid-feedback">{errors.city}</div>}
+                  <div className="form-row mb-3">
+                    <div className="col-12 col-md-6">
+                      <label htmlFor="dist">District</label>
+                      <input
+                        type="text"
+                        className={`form-control ${errors.dist ? 'is-invalid' : ''}`}
+                        id="dist"
+                        placeholder="Enter your district"
+                        value={formData.dist}
+                        onChange={handleChange}
+                      />
+                      {errors.dist && <div className="invalid-feedback">{errors.dist}</div>}
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <label htmlFor="pincode">Pincode</label>
+                      <input
+                        type="text"
+                        className={`form-control ${errors.pincode ? 'is-invalid' : ''}`}
+                        id="pincode"
+                        placeholder="Enter your pincode"
+                        value={formData.pincode}
+                        onChange={handleChange}
+                        maxLength={6} // Limit input length to 6 digits
+                      />
+                      {errors.pincode && <div className="invalid-feedback">{errors.pincode}</div>}
+                    </div>
                   </div>
-                </div>
 
-                <div className="form-row mb-3">
-                  <div className="col-12 col-md-6">
-                    <label htmlFor="taluka">Taluka</label>
-                    <input
-                      type="text"
-                      className={`form-control ${errors.taluka ? 'is-invalid' : ''}`}
-                      id="taluka"
-                      placeholder="Enter taluka"
-                      value={formData.taluka}
-                      onChange={handleChange}
-                    />
-                    {errors.taluka && <div className="invalid-feedback">{errors.taluka}</div>}
-                  </div>
-                  <div className="col-12 col-md-6">
-                    <label htmlFor="pincode">Pincode</label>
-                    <input
-                      type="text"
-                      className={`form-control ${errors.pincode ? 'is-invalid' : ''}`}
-                      id="pincode"
-                      placeholder="Enter pincode"
-                      value={formData.pincode}
-                      onChange={handleChange}
-                    />
-                    {errors.pincode && <div className="invalid-feedback">{errors.pincode}</div>}
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <button 
-                    type="submit" 
-                    className={`btn btn-primary mt-3 ${isSubmitting ? 'submitting' : ''}`}
-                    disabled={isSubmitting} // Disable button while submitting
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                  <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>
+                    {isSubmitting ? "Submitting..." : "Submit"}
                   </button>
-                  {successMessage && <div className="success-message mt-3">{successMessage}</div>} {/* Display success message */}
-                </div>
-              </form>
+                  {successMessage && <div className="alert alert-success mt-3">{successMessage}</div>}
+                </form>
+              </div>
             </div>
           </div>
-        </div>
+        
+      
 
-        <div className="contact-column">
+
+
+
+
+
+
+          <div className="contact-column ">
           
-          <div class="contact-info">
+          <div class="contact-info ">
             <div class="contact-item">
               <div class="icon">
                 <img src="https://img.icons8.com/fluent/48/000000/address.png" alt="Address Icon" />
@@ -271,8 +282,8 @@ function Contact() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
     </>
   );
 }

@@ -1,0 +1,22 @@
+{
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "internship": "Internship",
+      "farming": "Farming",
+      "services": "Services",
+      "contact": "Contact Us"
+    },
+    "homepage": {
+      "welcome": "Welcome to Royal Shetkari IT Company",
+      "innovating": "Innovating your business with cutting-edge technology solutions.",
+      "empowering": "Empowering Your Digital Transformation",
+      "web_dev": "We provide web development, mobile apps, and digital marketing.",
+      "grow_business": "Grow Your Business with Royal Shetkari",
+      "trusted_partner": "Your trusted partner in IT solutions and services.",
+      "learn_more": "Learn More",
+      "get_started": "Get Started",
+      "contact_us": "Contact Us"
+    }
+  }
+  

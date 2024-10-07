@@ -13,6 +13,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Farming from './Components/Pages/Farming/Farming';
 import Footer from './Components/Navbars/Footer/Footer';
 import Internship from './Components/Pages/Internship/Internship';
+import "../src/Components/i18n/i18n"
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
