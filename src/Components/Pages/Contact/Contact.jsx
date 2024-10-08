@@ -1,3 +1,5 @@
+
+
 import "./Contact.css";
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -90,7 +92,7 @@ function Contact() {
       };
 
       try {
-        const response = await axios.post("http://192.168.221.191:3000/api/contactus", formDataToSend);
+        const response = await axios.post("http://192.168.81.191:3000/api/contactus", formDataToSend);
 
         console.log("Response data:", response.data);
 
