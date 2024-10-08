@@ -10,7 +10,7 @@ function Farming() {
       <div className='farming-empowering text-center py-5'>
         <h3 className="display-5 mt-5">{t('farming.title')}</h3>
         <p className="Contact-Royal highlight">{t('farming.company')}</p>
-        <p>Royal</p>
+      
       </div>
 
       <div className='container'>
