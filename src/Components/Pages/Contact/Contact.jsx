@@ -150,7 +150,7 @@ function Contact() {
                 <form className="p-4 shadow rounded form-container" onSubmit={handleSubmit}>
                   <div className="form-row mb-3">
                     <div className="col-12">
-                      <label htmlFor="customerName">Name</label>
+                      <label htmlFor="customerName"> Enter Name</label>
                       <input
                         type="text"
                         className={`form-control ${errors.customerName ? 'is-invalid' : ''}`}
