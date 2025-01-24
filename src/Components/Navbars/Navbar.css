@@ -34,7 +34,7 @@
   }
   
   .navbar .navbar-toggler-icon:before {
-    content: '\2630'; /* Unicode for hamburger icon */
+    content: '2630'; /* Unicode for hamburger icon */
     font-size: 1.5em;
   }
   

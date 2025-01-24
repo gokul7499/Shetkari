@@ -1,4 +1,3 @@
-
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
@@ -14,8 +13,7 @@ module.exports = {
             preset: [
               "default",
               {
-                discardComments: { removeAll: true },
-                normalizeUrl: false, // Avoid breaking URLs
+                normalizeUrl: false, // Prevent breaking URLs
               },
             ],
           },

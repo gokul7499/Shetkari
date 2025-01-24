@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Internship.css';
-import "@fontsource/poppins";
+import "@fontsource/poppins"; // Importing font styles
 import { useTranslation } from 'react-i18next';
 
 function Internship() {
   const { t } = useTranslation();
 
-  const handleEnrollNow = () => {
-    alert(t('internship.enroll_now') + " clicked!");
-  };
-
-  const handleHowItWorks = () => {
-    alert(t('internship.how_it_works') + " clicked!");
-  };
-
+  // State for the current slide in the slider
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Data for the slides
   const slides = [
     {
       title: t('internship.real_experience'),
@@ -35,44 +29,47 @@ function Internship() {
     }
   ];
 
-  // Automatic slide change every 5 seconds
+  // Automatically change slides every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval); // Clear interval on component unmount
   }, [slides.length]);
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+  // Handlers for slide navigation
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const nextSlide = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
   return (
     <div>
+      {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="Give mt-5">
             {t('internship.give_yourself')} <br />
             <span className="highlight">{t('internship.unbeatable_advantage')}</span>
           </h1>
-          <p className="platform">
-            {t('internship.platform_description')}
-          </p>
+          <p className="platform">{t('internship.platform_description')}</p>
           <div className="buttons">
-            <button className="enroll-btn" onClick={handleEnrollNow}>{t('internship.enroll_now')}</button>
-            <button className="how-btn" onClick={handleHowItWorks}>{t('internship.how_it_works')}</button>
+            <button className="enroll-btn" onClick={() => alert(t('internship.enroll_now') + " clicked!")}>
+              {t('internship.enroll_now')}
+            </button>
+            <button className="how-btn" onClick={() => alert(t('internship.how_it_works') + " clicked!")}>
+              {t('internship.how_it_works')}
+            </button>
           </div>
         </div>
         <div className="image-container">
-          <img src="https://www.virtualinternships.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/03/inturn-header.png.webp" alt="Person smiling" />
+          <img
+            src="https://www.virtualinternships.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/03/inturn-header.png.webp"
+            alt={t('internship.hero_image_alt')}
+          />
         </div>
       </div>
 
+      {/* Career Section */}
       <div className="career-section">
         <div className="background-shapes">
           <div className="shape shape-left"></div>
@@ -80,12 +77,11 @@ function Internship() {
         </div>
         <div className="career-content">
           <h2 className="Internship-h2">{t('internship.career_reality')}</h2>
-          <p style={{ fontSize: '14px', fontFamily: "cursive" }}>
-            {t('internship.career_description')}
-          </p>
+          <p style={{ fontSize: '14px', fontFamily: "cursive" }}>{t('internship.career_description')}</p>
         </div>
       </div>
 
+      {/* Slider Section */}
       <div className="slider-container">
         <h2 style={{ fontWeight: 'bold', fontSize: '45px', color: 'white' }}>
           {t('internship.virtual_internships')} <span className="highlight">{t('internship.virtual_internships_description')}</span>
@@ -111,13 +107,10 @@ function Internship() {
         </div>
       </div>
 
+      {/* Launch Career Stats Section */}
       <div className="launch-career-container">
-        <h2 className="title">
-          {t('internship.launch_your_career')}
-        </h2>
-        <p className="subtitle">
-          {t('internship.launch_description')}
-        </p>
+        <h2 className="title">{t('internship.launch_your_career')}</h2>
+        <p className="subtitle">{t('internship.launch_description')}</p>
         <div className="stats-container">
           <div className="stat-box">
             <h3 className="stat-number purple">250k+</h3>

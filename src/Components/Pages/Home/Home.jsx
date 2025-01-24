@@ -10,17 +10,19 @@ import Contact from '../Contact/Contact';
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const { t } = useTranslation(); // Using translation hook
+  const { t } = useTranslation(); // Hook for translations
 
   return (
     <>
+      {/* Homepage Carousel */}
       <div className="homepage-container">
         <Carousel className="carousel-container" interval={3000} fade>
+          {/* Slide 1 */}
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
               src="/img/people-with-laptops-office.jpg"
-              alt="First slide"
+              alt={t('homepage.slides.first_alt')}
             />
             <Carousel.Caption>
               <div className="caption-content">
@@ -31,11 +33,12 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
 
+          {/* Slide 2 */}
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
               src="/img/people-with-laptops-office.jpg"
-              alt="Second slide"
+              alt={t('homepage.slides.second_alt')}
             />
             <Carousel.Caption>
               <div className="caption-content">
@@ -46,11 +49,12 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
 
+          {/* Slide 3 */}
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
               src="/img/modern-equipped-computer-lab.jpg"
-              alt="Third slide"
+              alt={t('homepage.slides.third_alt')}
             />
             <Carousel.Caption>
               <div className="caption-content">
@@ -63,7 +67,7 @@ const Home = () => {
         </Carousel>
       </div>
 
-      {/* Other components */}
+      {/* Other Page Components */}
       <About />
       <Internship />
       <Farming />

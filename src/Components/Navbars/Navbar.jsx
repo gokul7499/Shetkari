@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css';
+import './Navbar.css'; // Your custom styling
 
 function Navbar() {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
-    console.log(`Switching to language: ${lng}`);
     i18n.changeLanguage(lng);
   };
 
@@ -25,7 +24,11 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg fixed-top">
         <Link to="/">
-          <img className="navbar-brand ml-4 logo" src="\img\final_logo-removebg-preview.png" alt="Logo" />
+          <img
+            className="navbar-brand ml-4 logo"
+            src="/img/final_logo-removebg-preview.png"
+            alt="Logo"
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -42,7 +45,7 @@ function Navbar() {
           <ul className="navbar-nav mx-auto">
             <li className="nav-item active mx-2">
               <Link className="nav-link" to="/" onClick={handleNavItemClick}>
-                {t('navbar.home')} <span className="sr-only">(current)</span>
+                {t('navbar.home')}
               </Link>
             </li>
             <li className="nav-item mx-2">
@@ -80,9 +83,24 @@ function Navbar() {
           </div>
 
           <div className="language-switcher ml-3">
-            <button onClick={() => changeLanguage('en')} className="btn btn-outline-primary mr-2">EN</button>
-            <button onClick={() => changeLanguage('hi')} className="btn btn-outline-primary mr-2">HI</button>
-            <button onClick={() => changeLanguage('mr')} className="btn btn-outline-primary">MR</button>
+            <button
+              onClick={() => changeLanguage('en')}
+              className="btn btn-outline-primary mr-2"
+            >
+              EN
+            </button>
+            <button
+              onClick={() => changeLanguage('hi')}
+              className="btn btn-outline-primary mr-2"
+            >
+              HI
+            </button>
+            <button
+              onClick={() => changeLanguage('mr')}
+              className="btn btn-outline-primary"
+            >
+              MR
+            </button>
           </div>
         </div>
       </nav>
