@@ -82,6 +82,11 @@ body {
     .carousel-caption h1 {
         font-size: 2rem;
     }
+    .carousel-image {
+        /* Prevents cutting off important parts */
+        object-position: center;
+        height: 90vh; /* Match the reduced height of the carousel */
+    }
 
     .carousel-caption p {
         font-size: 1rem;

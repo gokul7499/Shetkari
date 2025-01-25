@@ -10,19 +10,18 @@ import Contact from '../Contact/Contact';
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const { t } = useTranslation(); // Hook for translations
+  const { t } = useTranslation(); // Using translation hook
 
   return (
     <>
-      {/* Homepage Carousel */}
       <div className="homepage-container">
         <Carousel className="carousel-container" interval={3000} fade>
           {/* Slide 1 */}
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="https://camtekitsolutions.com/dev/wp-content/uploads/2022/12/banner.jpg"
-              alt={t('homepage.slides.first_alt')}
+              src={`${process.env.PUBLIC_URL}/img/people-with-laptops-office.jpg`} // Updated path
+              alt="First slide"
             />
             <Carousel.Caption>
               <div className="caption-content">
@@ -37,8 +36,8 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="https://websitepandas.com/wp-content/uploads/2024/05/Who-we-are.webp"
-              alt={t('homepage.slides.second_alt')}
+              src={`${process.env.PUBLIC_URL}/img/people-with-laptops-office.jpg`} // Updated path
+              alt="Second slide"
             />
             <Carousel.Caption>
               <div className="caption-content">
@@ -53,8 +52,8 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="https://5.imimg.com/data5/SELLER/Default/2023/12/372379451/VO/VT/SW/206078552/root-cause-analysis-course.jpg"
-              alt={t('homepage.slides.third_alt')}
+              src={`${process.env.PUBLIC_URL}/img/modern-equipped-computer-lab.jpg`} // Updated path
+              alt="Third slide"
             />
             <Carousel.Caption>
               <div className="caption-content">
@@ -67,7 +66,7 @@ const Home = () => {
         </Carousel>
       </div>
 
-      {/* Other Page Components */}
+      {/* Other components */}
       <About />
       <Internship />
       <Farming />
