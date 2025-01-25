@@ -16,7 +16,7 @@
     margin-bottom: 40px;
   }
   
-  /* Services section */
+ 
   .services-section {
     padding: 40px 20px;
     background-color: #f9f9f9;
@@ -55,23 +55,21 @@
     }
   }
   
-  /* Hover effect for service cards */
- /* Hover effect for service cards */
  .service-card:hover {
   box-shadow: 10px 15px 24px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05); /* Slight zoom effect */
-  background-color: lawngreen; /* Hover background color */
+  transform: scale(1.05); 
+  background-color: lawngreen;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Change text color on hover */
+
 .service-card:hover h3,
 .service-card:hover p {
-  color: red; /* Text color white on hover */
+  color: red; 
 }
 
 
-  /* Circular image styling */
+  
   .service-card img {
     width: 100px;
     height: 100px;
@@ -80,7 +78,7 @@
     border-radius: 50%;
   }
   
-  /* Title of service card */
+
   .service-card h3 {
     margin-top: 15px;
     font-size: 22px;
@@ -88,7 +86,7 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  /* Description text for service card */
+
   .service-card p {
     font-size: 16px;
     color: #666;
@@ -97,7 +95,7 @@
     font-family: 'Open Sans', sans-serif;
   }
   
-  /* Media Queries for responsive design */
+
   @media (max-width: 768px) {
     .services-mt {
       font-size: 28px;

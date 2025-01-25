@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 function Services() {
   const { t } = useTranslation();
 
-  // Define image paths
+
   const images = {
     img1: `${process.env.PUBLIC_URL}/services/img1.jpg`,
     img2: `${process.env.PUBLIC_URL}/services/img2.jpg`,
@@ -18,14 +18,14 @@ function Services() {
 
   return (
     <>
-      {/* Header Section */}
+ 
       <div className="text-center py-5 mt-2">
         <h3 className="display-5 mt-5">{t('services.title')}</h3>
       </div>
 
-      {/* Services Container */}
+     
       <div className="services-container">
-        {/* Section 1 */}
+        
         <section className="services-section">
           <h2 className="Our-Services">{t('services.our_services')}</h2>
           <div className="services-grid mt-5">
@@ -47,7 +47,7 @@ function Services() {
           </div>
         </section>
 
-        {/* Section 2 */}
+       
         <section className="services-section">
           <div className="services-grid">
             <div className="service-card">

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Internship.css';
-import "@fontsource/poppins"; // Importing font styles
+import "@fontsource/poppins"; 
 import { useTranslation } from 'react-i18next';
 
 function Internship() {
   const { t } = useTranslation();
 
-  // State for the current slide in the slider
+  
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Data for the slides
   const slides = [
     {
       title: t('internship.real_experience'),
@@ -29,22 +28,20 @@ function Internship() {
     }
   ];
 
-  // Automatically change slides every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 5000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
+    return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Handlers for slide navigation
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   const nextSlide = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
   return (
     <div>
-      {/* Hero Section */}
+    
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="Give mt-5">
@@ -69,7 +66,7 @@ function Internship() {
         </div>
       </div>
 
-      {/* Career Section */}
+
       <div className="career-section">
         <div className="background-shapes">
           <div className="shape shape-left"></div>
@@ -81,7 +78,7 @@ function Internship() {
         </div>
       </div>
 
-      {/* Slider Section */}
+
       <div className="slider-container">
         <h2 style={{ fontWeight: 'bold', fontSize: '45px', color: 'white' }}>
           {t('internship.virtual_internships')} <span className="highlight">{t('internship.virtual_internships_description')}</span>
@@ -107,7 +104,7 @@ function Internship() {
         </div>
       </div>
 
-      {/* Launch Career Stats Section */}
+  
       <div className="launch-career-container">
         <h2 className="title">{t('internship.launch_your_career')}</h2>
         <p className="subtitle">{t('internship.launch_description')}</p>

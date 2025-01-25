@@ -1,4 +1,4 @@
-/* / / Base Styles */ */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -67,7 +67,7 @@ body, html {
     color: #fff;
   }
   
-  /* / Image Container / */
+ 
   .image-container {
     margin-top: 30px;
     width: 100%;
@@ -81,7 +81,7 @@ body, html {
     border-radius: 10px;
   }
   
-  /* / Career Section / */
+ 
   .career-section {
     padding: 60px 20px;
     background-color: #fff;
@@ -101,7 +101,7 @@ body, html {
   
 
   
-  /* / Responsive Design / */
+  
   @media (min-width: 768px) {
     .hero-section {
       flex-direction: row;
@@ -154,7 +154,7 @@ body, html {
     }
   }
   
-  /* / Career Section / */
+  
   .career-section {
     position: relative;
     padding: 60px 20px;
@@ -184,7 +184,7 @@ body, html {
     color: #E0E0E0;
   }
   
-  /* / Background Shapes with Animation / */
+
   .background-shapes {
     position: absolute;
     top: 0;
@@ -218,7 +218,7 @@ body, html {
     right: -150px;
   }
   
-  /* / Animation for Circular Motion / */
+
   @keyframes circular-motion {
     0% {
       transform: translate(0, 0) rotate(0deg);
@@ -240,7 +240,7 @@ body, html {
   .Intership-h2{
     color: black;
   }
-  /* / Responsive Design / */
+
   @media (max-width: 768px) {
     .career-content h2 {
       font-size: 2rem;
@@ -378,7 +378,7 @@ body, html {
 
 
 
-  /* / Responsive Styling / */
+ 
   @media (max-width: 768px) {
     .slider-container h2 {
       font-size: 1.8rem;
@@ -432,7 +432,7 @@ body, html {
     background-color: #f1f1f1;
   }
   
-  /* Title Styles */
+ 
   .title {
     font-size: 2.5rem;
     color: #333;
@@ -452,7 +452,7 @@ body, html {
     margin-bottom: 50px;
   }
   
-  /* Stats Container */
+ 
   .stats-container {
     display: flex;
     justify-content: space-around;
@@ -465,7 +465,7 @@ body, html {
     padding: 20px;
     width: 200px;
     margin-bottom: 20px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    
     transition: transform 0.3s ease;
   }
   
@@ -490,8 +490,7 @@ body, html {
     font-size: 0.9rem;
     color: #666;
   }
-  
-  /* Color Specific Classes */
+
   .purple {
     color: #6a5acd;
   }
@@ -508,7 +507,7 @@ body, html {
     color: #ffcc48;
   }
   
-  /* Responsive Design */
+
   @media (max-width: 768px) {
     .title {
       font-size: 2rem;
