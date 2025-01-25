@@ -21,7 +21,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="/img/people-with-laptops-office.jpg"
+              src="https://camtekitsolutions.com/dev/wp-content/uploads/2022/12/banner.jpg"
               alt={t('homepage.slides.first_alt')}
             />
             <Carousel.Caption>
@@ -37,7 +37,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="/img/people-with-laptops-office.jpg"
+              src="https://websitepandas.com/wp-content/uploads/2024/05/Who-we-are.webp"
               alt={t('homepage.slides.second_alt')}
             />
             <Carousel.Caption>
@@ -53,7 +53,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 carousel-image"
-              src="/img/modern-equipped-computer-lab.jpg"
+              src="https://5.imimg.com/data5/SELLER/Default/2023/12/372379451/VO/VT/SW/206078552/root-cause-analysis-course.jpg"
               alt={t('homepage.slides.third_alt')}
             />
             <Carousel.Caption>

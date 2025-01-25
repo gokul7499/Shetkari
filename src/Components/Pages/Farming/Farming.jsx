@@ -27,7 +27,7 @@ function Farming() {
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
-                src="/farming/IMG-2.jpg"
+                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ-bMX7gAVJ4TiG9oiyhFJyr7e_MBidFbh1kEjL51zz8gURXzxu"
                 className="card-img-top img-fluid"
                 alt={t('farming.card_titles.arable_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
@@ -46,7 +46,7 @@ function Farming() {
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
-                src="/farming/IMG-3.jpg"
+                src="https://media.licdn.com/dms/image/v2/D4D12AQHlX3iXR7EtQw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1713770411971?e=2147483647&v=beta&t=wFTWpevgJgNsTQ75QyGDDdB-SXqPjnWS-NQpihyQ-Sw"
                 className="card-img-top img-fluid"
                 alt={t('farming.card_titles.traditional_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
@@ -65,7 +65,7 @@ function Farming() {
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
-                src="/farming/IMG-1.jpg"
+                src="https://img.freepik.com/premium-photo/person-planting-beautiful-field-crops_1054941-40467.jpg"
                 className="card-img-top img-fluid"
                 alt={t('farming.card_titles.organic_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
@@ -87,7 +87,7 @@ function Farming() {
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
-                src="/farming/IMG-4.jpg"
+                src="https://img.freepik.com/premium-photo/isometric-image-smartphone-lot-elements-agribusiness_58460-32476.jpg"
                 className="card-img-top img-fluid"
                 alt={t('farming.card_titles.arable_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
@@ -105,7 +105,7 @@ function Farming() {
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
-                src="/farming/IMG-5.jpg"
+                src="https://img.freepik.com/premium-vector/realtime-tracking-machinery-equipment-used-crop-management-allowing-efficient_216520-182879.jpg"
                 className="card-img-top img-fluid"
                 alt={t('farming.card_titles.traditional_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
@@ -123,7 +123,7 @@ function Farming() {
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
-                src="/farming/IMG-4.jpg"
+                src="https://img.freepik.com/premium-photo/agricultural-technology-photos_1252102-49126.jpg?w=360"
                 className="card-img-top img-fluid"
                 alt={t('farming.card_titles.organic_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
