@@ -9,27 +9,31 @@ import 'react-toastify/dist/ReactToastify.css';
 const Footer = () => {
   const [visitorCount, setVisitorCount] = useState(0);
   const [email, setEmail] = useState(''); // For subscription
+  const backendURL = 'https://website-backend-royal.onrender.com/api'; // Backend base URL
 
   // Fetch the visitor count from the backend
   const getVisitorCount = async () => {
     try {
-      const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor/count');
-      setVisitorCount(response.data.visitorCount); // Update visitor count
+      const response = await axios.get(`${backendURL}/visitor/count`);
+      setVisitorCount(response.data.visitorCount || 0); // Update visitor count
     } catch (error) {
       console.error('Error fetching visitor count:', error);
+      toast.error('Failed to fetch visitor count.');
     }
   };
 
   // Increment visitor count on page load
   const incrementVisitorCount = async () => {
     try {
-      const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor');
-      setVisitorCount(response.data.visitorCount); // Update visitor count after increment
+      const response = await axios.get(`${backendURL}/visitor`);
+      setVisitorCount(response.data.visitorCount || 0); // Update visitor count after increment
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
+      toast.error('Failed to update visitor count.');
     }
   };
 
+  // Run only once when the component mounts
   useEffect(() => {
     incrementVisitorCount(); // Increment visitor count when the page loads
   }, []);
@@ -55,7 +59,7 @@ const Footer = () => {
     }
 
     try {
-      await axios.post('http://your-backend-url/api/subscribe', { email });
+      await axios.post(`${backendURL}/subscribe`, { email });
       toast.success('Subscribed successfully!');
       setEmail(''); // Clear email input
     } catch (error) {
