@@ -1,51 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Import axios for API requests
-import './Footer.css'; // Import the CSS file for styling
+import axios from 'axios';
+import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast from react-toastify
-import 'react-toastify/dist/ReactToastify.css'; // Import react-toastify CSS
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Footer = () => {
   const [visitorCount, setVisitorCount] = useState(0);
-  const [email, setEmail] = useState(''); // State to store email input
+  const [email, setEmail] = useState(''); // For subscription
 
-  // Function to get the current visitor count from the API
+  // Fetch the visitor count from the backend
   const getVisitorCount = async () => {
     try {
       const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor/count');
-      setVisitorCount(response.data.visitorCount); // Assuming the API response is in the form { visitorCount: number }
+      setVisitorCount(response.data.visitorCount); // Update visitor count
     } catch (error) {
       console.error('Error fetching visitor count:', error);
     }
   };
 
-  // Function to increment the visitor count via API
+  // Increment visitor count on page load
   const incrementVisitorCount = async () => {
     try {
-      await axios.get('https://website-backend-royal.onrender.com/api/visitor'); // This will trigger the visit save
-      getVisitorCount(); // After saving, get the updated visitor count
+      const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor');
+      setVisitorCount(response.data.visitorCount); // Update visitor count after increment
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
     }
   };
 
   useEffect(() => {
-    incrementVisitorCount(); // Increment the visitor count on page load
-    getVisitorCount(); // Fetch the visitor count after updating
+    incrementVisitorCount(); // Increment visitor count when the page loads
   }, []);
 
-  // Email validation function using a simple regex
+  // Validate email input
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
-  // Function to handle subscription form submission
+  // Handle subscription form submission
   const handleSubscribe = async (e) => {
     e.preventDefault();
 
-    if (email.trim() === '') {
+    if (!email.trim()) {
       toast.error('Please enter your email');
       return;
     }
@@ -56,13 +55,12 @@ const Footer = () => {
     }
 
     try {
-      // Make a POST request to the subscription API
       await axios.post('http://your-backend-url/api/subscribe', { email });
-      toast.success('Email subscribed successfully!');
-      setEmail(''); // Clear the email input field after success
+      toast.success('Subscribed successfully!');
+      setEmail(''); // Clear email input
     } catch (error) {
       console.error('Error subscribing email:', error);
-      toast.error('Failed to subscribe. Please try again.');
+      toast.error('Failed to subscribe. Try again.');
     }
   };
 
@@ -70,8 +68,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section logo-section">
-          <img src={`${process.env.PUBLIC_URL}/img/final_logo-removebg-preview.png`} alt="Royal Shetkari IT Company Logo" className="footer-logo" />
-          <p className='text-light'>Your trusted partner in technology.</p>
+          <img 
+            src={`${process.env.PUBLIC_URL}/img/final_logo-removebg-preview.png`} 
+            alt="Royal Shetkari IT Company Logo" 
+            className="footer-logo" 
+          />
+          <p className="text-light">Your trusted partner in technology.</p>
         </div>
 
         <div className="footer-section">
@@ -114,7 +116,7 @@ const Footer = () => {
             <button type="submit">Subscribe</button>
           </form>
         </div>
-        
+
         <div className="footer-section visitor-count">
           <h4>Visitor Count</h4>
           <p className="text-light">{visitorCount} visitors</p>
@@ -122,10 +124,10 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p className='text-light'>&copy; {new Date().getFullYear()} Royal Shetkari IT Company. All rights reserved.</p>
+        <p className="text-light">&copy; {new Date().getFullYear()} Royal Shetkari IT Company. All rights reserved.</p>
       </div>
 
-      <ToastContainer /> {/* Add ToastContainer for displaying notifications */}
+      <ToastContainer /> {/* Toast notifications */}
     </footer>
   );
 };
