@@ -13,7 +13,7 @@ const Footer = () => {
   // Function to get the current visitor count from the API
   const getVisitorCount = async () => {
     try {
-      const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor/count');
+      const response = await axios.get('https://your-backend-url/api/visitor/count');
       setVisitorCount(response.data.visitorCount); // Assuming the API response is in the form { visitorCount: number }
     } catch (error) {
       console.error('Error fetching visitor count:', error);
@@ -23,7 +23,7 @@ const Footer = () => {
   // Function to increment the visitor count via API
   const incrementVisitorCount = async () => {
     try {
-      await axios.get('https://website-backend-royal.onrender.com/api/visitor'); // This will trigger the visit save
+      await axios.get('https://your-backend-url/api/visitor'); // This will trigger the visit save
       getVisitorCount(); // After saving, get the updated visitor count
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
@@ -31,8 +31,8 @@ const Footer = () => {
   };
 
   useEffect(() => {
-    getVisitorCount(); // Fetch the current visitor count when the component mounts
     incrementVisitorCount(); // Increment the visitor count on page load
+    getVisitorCount(); // Fetch the visitor count after updating
   }, []);
 
   // Email validation function using a simple regex
@@ -57,7 +57,7 @@ const Footer = () => {
 
     try {
       // Make a POST request to the subscription API
-      await axios.post('http://192.168.81.191:3000/api/subscribe', { email });
+      await axios.post('http://your-backend-url/api/subscribe', { email });
       toast.success('Email subscribed successfully!');
       setEmail(''); // Clear the email input field after success
     } catch (error) {
