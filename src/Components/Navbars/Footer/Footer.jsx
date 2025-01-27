@@ -70,7 +70,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section logo-section">
-          <img src="/img/final_logo-removebg-preview.png" alt="Royal Shetkari IT Company Logo" className="footer-logo" />
+          <img src={`${process.env.PUBLIC_URL}/img/final_logo-removebg-preview.png`} alt="Royal Shetkari IT Company Logo" className="footer-logo" />
           <p className='text-light'>Your trusted partner in technology.</p>
         </div>
 
