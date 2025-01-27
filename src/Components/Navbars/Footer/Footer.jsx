@@ -8,14 +8,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Footer = () => {
   const [visitorCount, setVisitorCount] = useState(0);
-  const [email, setEmail] = useState(''); // For subscription
+  const [email, setEmail] = useState('');
   const backendURL = 'https://website-backend-royal.onrender.com/api'; // Backend base URL
 
-  // Fetch the visitor count from the backend
+  // Fetch visitor count from the backend
   const getVisitorCount = async () => {
     try {
       const response = await axios.get(`${backendURL}/visitor/count`);
-      setVisitorCount(response.data.visitorCount || 0); // Update visitor count
+      setVisitorCount(response.data.visitorCount || 0);
     } catch (error) {
       console.error('Error fetching visitor count:', error);
       toast.error('Failed to fetch visitor count.');
@@ -26,16 +26,16 @@ const Footer = () => {
   const incrementVisitorCount = async () => {
     try {
       const response = await axios.get(`${backendURL}/visitor`);
-      setVisitorCount(response.data.visitorCount || 0); // Update visitor count after increment
+      setVisitorCount(response.data.visitorCount || 0);
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
       toast.error('Failed to update visitor count.');
     }
   };
 
-  // Run only once when the component mounts
+  // Fetch visitor count on mount
   useEffect(() => {
-    incrementVisitorCount(); // Increment visitor count when the page loads
+    incrementVisitorCount();
   }, []);
 
   // Validate email input
@@ -59,12 +59,14 @@ const Footer = () => {
     }
 
     try {
-      await axios.post(`${backendURL}/subscribe`, { email });
-      toast.success('Subscribed successfully!');
-      setEmail(''); // Clear email input
+      const response = await axios.post(`${backendURL}/subscribe`, { email }); // Send email to backend
+      if (response.status === 200) {
+        toast.success('Subscribed successfully!');
+        setEmail(''); // Clear email input
+      }
     } catch (error) {
       console.error('Error subscribing email:', error);
-      toast.error('Failed to subscribe. Try again.');
+      toast.error(error.response?.data?.message || 'Failed to subscribe. Try again.');
     }
   };
 
@@ -72,10 +74,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section logo-section">
-          <img 
-            src={`${process.env.PUBLIC_URL}/img/final_logo-removebg-preview.png`} 
-            alt="Royal Shetkari IT Company Logo" 
-            className="footer-logo" 
+          <img
+            src={`${process.env.PUBLIC_URL}/img/final_logo-removebg-preview.png`}
+            alt="Royal Shetkari IT Company Logo"
+            className="footer-logo"
           />
           <p className="text-light">Your trusted partner in technology.</p>
         </div>
@@ -110,12 +112,12 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Subscribe to our Newsletter</h4>
           <form className="subscribe-form" onSubmit={handleSubscribe}>
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              required 
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <button type="submit">Subscribe</button>
           </form>
