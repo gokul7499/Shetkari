@@ -59,7 +59,7 @@ const Footer = () => {
     }
 
     try {
-      await axios.post(`${backendURL}/subscribe`, { email });
+      await axios.post("https://website-backend-royal.onrender.com/api/subscribe", { email });
       toast.success('Subscribed successfully!');
       setEmail(''); // Clear email input
     } catch (error) {
