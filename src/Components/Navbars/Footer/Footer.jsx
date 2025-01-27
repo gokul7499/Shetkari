@@ -13,7 +13,7 @@ const Footer = () => {
   // Function to get the current visitor count from the API
   const getVisitorCount = async () => {
     try {
-      const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor');
+      const response = await axios.get('https://website-backend-royal.onrender.com/api/visitor/count');
       setVisitorCount(response.data.visitorCount); // Assuming the API response is in the form { visitorCount: number }
     } catch (error) {
       console.error('Error fetching visitor count:', error);
@@ -23,8 +23,8 @@ const Footer = () => {
   // Function to increment the visitor count via API
   const incrementVisitorCount = async () => {
     try {
-      const response = await axios.post('https://website-backend-royal.onrender.com/api/visitor/count');
-      setVisitorCount(response.data.visitorCount); // Update visitor count with the new value
+      await axios.get('https://website-backend-royal.onrender.com/api/visitor'); // This will trigger the visit save
+      getVisitorCount(); // After saving, get the updated visitor count
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
     }
