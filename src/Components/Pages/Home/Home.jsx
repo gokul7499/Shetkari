@@ -8,6 +8,7 @@ import Internship from '../Internship/Internship';
 import Services from '../Services/Services';
 import Contact from '../Contact/Contact';
 import { useTranslation } from 'react-i18next';
+import ContactFormTable from '../ContctForm/ContactForm';
 
 const Home = () => {
   const { t } = useTranslation(); // Using translation hook
@@ -72,6 +73,7 @@ const Home = () => {
       <Farming />
       <Services />
       <Contact />
+      <ContactFormTable/>
     </>
   );
 };
