@@ -12,13 +12,13 @@ const Footer = () => {
   const backendURL = 'https://website-backend-royal.onrender.com/api'; // Backend base URL
 
   // Fetch visitor count from the backend
-  const getVisitorCount = async () => {
+  const updateVisitorCount = async () => {
     try {
-      const response = await axios.get(`${backendURL}/visitor/count`);
-      setVisitorCount(response.data.visitorCount || 0);
+      const response = await axios.get(`${backendURL}/count`);
+      setVisitorCount(response.data.totalVisitors || 0);
     } catch (error) {
-      console.error('Error fetching visitor count:', error);
-      toast.error('Failed to fetch visitor count.');
+      console.error('Error updating visitor count:', error);
+      toast.error('Failed to update visitor count.');
     }
   };
 
