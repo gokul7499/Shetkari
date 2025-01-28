@@ -25,11 +25,11 @@ const Footer = () => {
   // Increment visitor count on page load
   const incrementVisitorCount = async () => {
     try {
-      const response = await axios.get(`${backendURL}/visitor`);
+      const response = await axios.get(`${backendURL}/count`);
       setVisitorCount(response.data.visitorCount || 0);
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
-      toast.error('Failed to update visitor count.');
+      toast.error('Failed to update countvisitor .');
     }
   };
 
@@ -88,6 +88,7 @@ const Footer = () => {
             <li>Email: info@royalshetkari.com</li>
             <li>Phone: +91 12345 67890</li>
             <li>Address: Sangamner, Maharashtra, India</li>
+            
           </ul>
         </div>
 
