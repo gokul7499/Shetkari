@@ -34,7 +34,7 @@ const Footer = () => {
   // Fetch the current visitor count
   const fetchVisitorCount = async () => {
     try {
-      const response = await axios.get(`${backendURL}/visitor/count`);
+      const response = await axios.get(`${backendURL}/record-visitor`);
       setVisitorCount(response.data.totalVisitors || 0);
     } catch (error) {
       console.error("Error fetching visitor count:", error);
