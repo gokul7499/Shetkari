@@ -25,7 +25,7 @@ const Footer = () => {
   // Increment visitor count on page load
   const incrementVisitorCount = async () => {
     try {
-      const response = await axios.get(`${backendURL}/count`);
+      const response = await axios.get(`${backendURL}`);
       setVisitorCount(response.data.visitorCount || 0);
     } catch (error) {
       console.error('Error incrementing visitor count:', error);
