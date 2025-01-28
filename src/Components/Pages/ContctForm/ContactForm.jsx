@@ -35,7 +35,7 @@ const ContactFormTable = () => {
 
   return (
     <div>
-      <button className="btn btn-success ml-5" onClick={handleButtonClick}>
+      <button className="btn btn-success " onClick={handleButtonClick}>
         Show Contact Form Table
       </button>
 
