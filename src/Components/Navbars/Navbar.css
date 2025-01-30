@@ -21,15 +21,13 @@
   font-weight: bold;
 }
 
-.navbar .nav-link:hover {
-  color: green;
-}
 
-.navbar .navbar-toggler {
+
+.navbar  {
   border-color: white;
 }
 
-.navbar .navbar-toggler-icon {
+.navbar {
   background-image: none;
 }
 
@@ -80,7 +78,19 @@
     text-align: center;
     display: block;
   }
+.amd{
+  width: 170px;
+  margin-bottom: 20px;
+}
+.navbar-toggler{
+  background-color: white;
+  border: none;
+}
 
+.navbar-toggler:hover{
+  background-color: white;
+  border: none;
+}
   .navbar .nav-link {
     margin: 0;
   }
@@ -99,7 +109,7 @@
     margin-bottom: 0.5rem;
   }
 
-  .navbar .language-switcher button {
+  .navbar .language-switcher  {
     width: 100%; /* Full-width language buttons */
     margin-bottom: 0.5rem;
   }

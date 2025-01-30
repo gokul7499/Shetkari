@@ -103,7 +103,7 @@ function Navbar() {
             <Link to="/contact">
               <button
                 type="button"
-                className="btn btn-primary px-4 py-2 mx-2 w-60 rounded shadow-sm"
+                className="btn btn-primary px-4 py-2 mx-2 w-60 rounded shadow-sm amd"
                 onClick={handleNavItemClick}
               >
                 {t("navbar.contact")}

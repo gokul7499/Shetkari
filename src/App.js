@@ -12,6 +12,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Components/i18n/i18n';
+import InternshipApply from './Components/Pages/Internship/InternsApply';
 
 
 const ScrollToTop = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/farming" element={<Farming />} />
           <Route path="/internship" element={<Internship />} />
+          <Route path="/apply" element={<InternshipApply />} />
         </Routes>
       </div>
 

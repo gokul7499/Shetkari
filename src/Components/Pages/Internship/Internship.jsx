@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './Internship.css';
 import "@fontsource/poppins"; 
 import { useTranslation } from 'react-i18next';
 
 function Internship() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   
@@ -50,8 +52,8 @@ function Internship() {
           </h1>
           <p className="platform">{t('internship.platform_description')}</p>
           <div className="buttons">
-            <button className="enroll-btn" onClick={() => alert(t('internship.enroll_now') + " clicked!")}>
-              {t('internship.enroll_now')}
+          <button className="enroll-btn" onClick={() => navigate("/apply")}>
+              {t("internship.enroll_now")}
             </button>
             <button className="how-btn" onClick={() => alert(t('internship.how_it_works') + " clicked!")}>
               {t('internship.how_it_works')}
