@@ -6,11 +6,6 @@ function Services() {
   const { t } = useTranslation();
 
 
-  const videos = {
-    video1: `${process.env.PUBLIC_URL}/services/farmer.mp4`,
-    
-  };
-
   const images = {
     img1: `${process.env.PUBLIC_URL}/services/img1.jpg`,
     img2: `${process.env.PUBLIC_URL}/services/img2.jpg`,
@@ -34,18 +29,22 @@ function Services() {
         <section className="services-section">
           <h2 className="Our-Services">{t('services.our_services')}</h2>
           <div className="services-grid mt-5">
-  <div className="service-card">
-    <video autoPlay loop muted>
-      <source src={videos.video1} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <h3>{t('services.web_development.title')}</h3>
-    <p>{t('services.web_development.description')}</p>
-  </div>
-  
- 
-</div>
-
+            <div className="service-card">
+              <img src={images.img1} alt={t('services.web_development.title')} />
+              <h3>{t('services.web_development.title')}</h3>
+              <p>{t('services.web_development.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={images.img2} alt={t('services.mobile_app_development.title')} />
+              <h3>{t('services.mobile_app_development.title')}</h3>
+              <p>{t('services.mobile_app_development.description')}</p>
+            </div>
+            <div className="service-card">
+              <img src={images.img3} alt={t('services.digital_marketing.title')} />
+              <h3>{t('services.digital_marketing.title')}</h3>
+              <p>{t('services.digital_marketing.description')}</p>
+            </div>
+          </div>
         </section>
 
        
@@ -67,7 +66,7 @@ function Services() {
               <p>{t('services.soil_health_management.description')}</p>
             </div>
             <div className="service-card">
-              <img src={images.img1} alt={t('services.internship_opportunities.title')} />
+              <img src={images.img7} alt={t('services.internship_opportunities.title')} />
               <h3>{t('services.internship_opportunities.title')}</h3>
               <p>{t('services.internship_opportunities.description')}</p>
             </div>
