@@ -76,7 +76,7 @@ function Internship() {
         </div>
         <div className="career-content">
           <h2 className="Internship-h2">{t('internship.career_reality')}</h2>
-          <p style={{ fontSize: '14px', fontFamily: "cursive" }}>{t('internship.career_description')}</p>
+          <p style={{ fontSize: '15px', fontFamily: "monospace" }}>{t('internship.career_description')}</p>
         </div>
       </div>
 

@@ -116,8 +116,9 @@
     justify-content: space-between;
   }
   
+  
   .about-text, .about-image {
-    flex: 1;
+    flex:1 ;
     padding: 20px;
   }
   /* ServicesSlider.css */
