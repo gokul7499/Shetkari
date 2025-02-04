@@ -38,10 +38,11 @@ function Farming() {
           {/* Card 1: Arable Farming */}
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
-            <video autoPlay loop muted className='h-75'>
-      <source src={videos.video1} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+            <video autoPlay loop playsInline controls className="h-75">
+  <source src={videos.video1} type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+  
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{t('farming.card_titles.arable_farming')}</h5>
                 <p className="card-text">{t('farming.card_descriptions.arable_farming_desc')}</p>
