@@ -154,3 +154,60 @@ function Farming() {
 }
 
 export default Farming;
+```javascript
+// Cards Section
+<div className="container mt-5">
+  <div className="row">
+    {[
+      {
+        title: t('farming.card_titles.arable_farming'),
+        description: t('farming.card_descriptions.arable_farming_desc'),
+        image: images.img1,
+        height: '200px',
+      },
+      {
+        title: t('farming.card_titles.traditional_farming'),
+        description: t('farming.card_descriptions.traditional_farming_desc'),
+        image: images.img2,
+        height: '200px',
+      },
+      {
+        title: t('farming.card_titles.organic_farming'),
+        description: t('farming.card_descriptions.organic_farming_desc'),
+        image: images.img3,
+        height: '200px',
+      },
+      {
+        title: t('farming.card_titles.arable_farming'),
+        description: t('farming.card_descriptions.arable_farming_desc'),
+        image: images.img4,
+        height: '200px',
+      },
+      {
+        title: t('farming.card_titles.traditional_farming'),
+        description: t('farming.card_descriptions.traditional_farming_desc'),
+        image: images.img5,
+        height: '200px',
+      },
+    ].map((card, index) => (
+      <div key={index} className="col-md-4 col-sm-6 col-12 mb-4">
+        <div className="card h-100">
+          <img
+            src={card.image}
+            className="card-img-top img-fluid"
+            alt={card.title}
+            style={{ objectFit: 'cover', height: card.height }}
+          />
+          <div className="card-body d-flex flex-column">
+            <h5 className="card-title">{card.title}</h5>
+            <p className="card-text">{card.description}</p>
+            <a href="#!" className="btn btn-primary mt-auto">
+              {t('farming.go_somewhere')}
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+```
