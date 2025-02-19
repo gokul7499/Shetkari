@@ -130,7 +130,7 @@ function Farming() {
             </div>
           </div>
 
-          <div className="col-md-4 col-sm-6 col-12 mb-4">
+          {/* <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
                 src={images.img5}
@@ -146,7 +146,7 @@ function Farming() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
