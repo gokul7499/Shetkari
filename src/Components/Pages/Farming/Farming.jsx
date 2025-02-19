@@ -19,13 +19,12 @@ function Farming() {
   };
   return (
     <div>
-      {/* Empowering Farming Section */}
+    
       <div className="farming-empowering text-center py-5">
         <h3 className="display-5 mt-5">{t('farming.title')}</h3>
         <p className="Contact-Royal highlight">{t('farming.company')}</p>
       </div>
 
-      {/* Purpose Section */}
       <div className="container">
         <p className="farming-purpose text-center mt-4">
           {t('farming.purpose')}
@@ -53,7 +52,7 @@ function Farming() {
             </div>
           </div>
 
-          {/* Card 2: Traditional Farming */}
+        
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
@@ -72,7 +71,7 @@ function Farming() {
             </div>
           </div>
 
-          {/* Card 3: Organic Farming */}
+          
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
@@ -92,9 +91,9 @@ function Farming() {
           </div>
         </div>
 
-        {/* Additional Cards Row */}
+       
         <div className="row">
-          {/* Duplicate Cards for Additional Content */}
+          
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
