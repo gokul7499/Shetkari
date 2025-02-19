@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Shetkari/static/css/main.cfd5a1f5.css",
-    "main.js": "/Shetkari/static/js/main.22a3b179.js",
+    "main.css": "/Shetkari/static/css/main.35506bae.css",
+    "main.js": "/Shetkari/static/js/main.529ce17c.js",
     "static/js/453.ed3810f9.chunk.js": "/Shetkari/static/js/453.ed3810f9.chunk.js",
     "static/media/poppins-latin-400-normal.woff": "/Shetkari/static/media/poppins-latin-400-normal.1458587c0aa7cd06b82b.woff",
     "static/media/poppins-latin-400-normal.woff2": "/Shetkari/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
@@ -12,12 +12,12 @@
     "static/media/slick.ttf": "/Shetkari/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Shetkari/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Shetkari/index.html",
-    "main.cfd5a1f5.css.map": "/Shetkari/static/css/main.cfd5a1f5.css.map",
-    "main.22a3b179.js.map": "/Shetkari/static/js/main.22a3b179.js.map",
+    "main.35506bae.css.map": "/Shetkari/static/css/main.35506bae.css.map",
+    "main.529ce17c.js.map": "/Shetkari/static/js/main.529ce17c.js.map",
     "453.ed3810f9.chunk.js.map": "/Shetkari/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cfd5a1f5.css",
-    "static/js/main.22a3b179.js"
+    "static/css/main.35506bae.css",
+    "static/js/main.529ce17c.js"
   ]
 }
