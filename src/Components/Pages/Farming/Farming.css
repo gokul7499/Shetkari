@@ -1,79 +1,114 @@
-.farming-img{
-  width: 90%;
-  height: 10%;
+.farming-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+/* Responsive typography */
+.display-5 {
+  font-weight: bold;
+  color: black;
+  font-size: 1.8rem;
+}
+
+.farming-empowering {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.farming-purpose {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Card styling */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card:hover {
+  transform: none; /* Disable scaling on touch devices */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #e0f7fa;
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+}
+
+.card:hover .card-img-top {
+  transform: none; /* No zoom on mobile */
+}
+
+.card-body {
+  text-align: center;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Button styling */
+.btn {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+  display: block;
+}
+
+.btn:hover {
+  background-color: #004d40;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .display-5 {
+    font-size: 1.5rem;
   }
-  .display-5{
-      font-weight: bold;
-      color: black;
+
+  .card {
+    margin-bottom: 15px;
   }
-  /* Farming.css */
-  
-  /* Styling for the empowering section */
-  .farming-empowering {
-      width: 100%;
-      margin: 0;  
-      padding: 0; /* Removes any default padding */
-  
-  color: black;  }
-  
-  
-    
-    .farming-purpose {
-      font-size: 1.2rem;
-      color: #333;
-    }
-    
-    /* Card styling */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      background-color: #fff;
-      border: none;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .card:hover {
-      transform: scale(1.05); /* Slight zoom on hover */
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Add shadow effect */
-      background-color: #e0f7fa; /* Change background color on hover */
-    }
-    
-    .card-img-top {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-    
-    .card:hover .card-img-top {
-      transform: scale(1.1); /* Zoom the image slightly on hover */
-    }
-    
-    .card-body {
-      text-align: center;
-      padding: 20px;
-    }
-    
-    .card-title {
-      font-size: 1.5rem;
-      color: #00796b;
-      margin-bottom: 15px;
-    }
-    
-    .card-text {
-      font-size: 1rem;
-      color: #555;
-    }
-    
-    /* Button styling */
-    .btn {
-      background-color: #00796b;
-      color: white;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
-    
-    .btn:hover {
-      background-color: #004d40; /* Change button color on hover */
-    }
-    
-    
+
+  .farming-img {
+    max-height: 150px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

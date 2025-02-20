@@ -35,29 +35,28 @@ function Farming() {
       <div className="container mt-5">
         <div className="row">
           
-          <div className="col-md-4 col-sm-6 col-12 mb-4">
-            <div className="card h-100">
-            <video autoPlay loop playsInline controls className="h-75">
+        <div className="col-md-4 col-sm-6 col-12 mb-4">
+            <div className="card ">
+            <video autoPlay loop playsInline controls style={{height:"200px"}} >
   <source src={videos.video1} type="video/mp4" />
   Your browser does not support the video tag.
 </video>
   
               <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{t('farming.card_titles.arable_farming')}</h5>
-                <p className="card-text">{t('farming.card_descriptions.arable_farming_desc')}</p>
+                <h5 className="card-title">{t('farming.card_titles.traditional_farming')}</h5>
+                <p className="card-text">{t('farming.card_descriptions.traditional_farming_desc')}</p>
                 <a href="#!" className="btn btn-primary mt-auto">
                   {t('farming.go_somewhere')}
                 </a>
               </div>
             </div>
           </div>
-
-        
+      
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
               <img
                 src={images.img1}
-                className="card-img-top img-fluid h-75"
+                className="card-img-top img-fluid "
                 alt={t('farming.card_titles.traditional_farming')}
                 style={{ objectFit: 'cover', height: '200px' }}
               />
@@ -78,7 +77,7 @@ function Farming() {
                 src={images.img2}
                 className="card-img-top img-fluid "
                 alt={t('farming.card_titles.organic_farming')}
-                style={{ objectFit: 'cover', height: '650px' }}
+                style={{ objectFit: 'cover', height: '200px' }}
               />
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{t('farming.card_titles.organic_farming')}</h5>
