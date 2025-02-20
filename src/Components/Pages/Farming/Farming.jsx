@@ -31,10 +31,10 @@ function Farming() {
         </p>
       </div>
 
-      {/* Cards Section */}
+    
       <div className="container mt-5">
         <div className="row">
-          {/* Card 1: Arable Farming */}
+          
           <div className="col-md-4 col-sm-6 col-12 mb-4">
             <div className="card h-100">
             <video autoPlay loop playsInline controls className="h-75">
