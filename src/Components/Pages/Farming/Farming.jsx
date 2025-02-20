@@ -11,10 +11,10 @@ function Farming() {
   };
   const images = {
     img1: `${process.env.PUBLIC_URL}/Farming/IMG-1.jpg`,
-    img2: `${process.env.PUBLIC_URL}/Farming/IMG-2.jpg`,
-    img3: `${process.env.PUBLIC_URL}/Farming/IMG-3.jpg`,
-    img4: `${process.env.PUBLIC_URL}/Farming/IMG-4.jpg`,
-    img5: `${process.env.PUBLIC_URL}/Farming/IMG-5.jpg`,
+    img2: `${process.env.PUBLIC_URL}/Farming/IMG-2.JPG`,
+    img3: `${process.env.PUBLIC_URL}/Farming/IMG-3.JPG`,
+    img4: `${process.env.PUBLIC_URL}/Farming/IMG-4.JPG`,
+    img5: `${process.env.PUBLIC_URL}/Farming/IMG-5.JPG`,
     
   };
   return (
