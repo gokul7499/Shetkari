@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './Components/Pages/Home/Home';
 import Navbar from './Components/Navbars/Navbar';
+import Crops from './Components/Pages/Crops/Crops'
 import About from './Components/Pages/About/About';
 import Contact from './Components/Pages/Contact/Contact';
 import Services from './Components/Pages/Services/Services';
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/farming" element={<Farming />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/apply" element={<InternshipApply />} />
+          <Route path="/crops" element={<Crops />} />
         </Routes>
       </div>
 
