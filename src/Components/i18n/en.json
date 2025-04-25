@@ -103,6 +103,22 @@
               "description": "Practical technology-focused internships for students..."
             }
           },
+         "crops": {
+            "cropAnalyzer": "🌱 Crop Analyzer",
+            "getAnalysis": "Get analysis in English, Marathi and Hindi",
+            "uploadCropImage": "Upload Crop Image",
+            "clickToUpload": "Click to upload or drag and drop",
+            "imageFormats": "PNG, JPG, JPEG (MAX. 5MB)",
+            "imagePreview": "Image Preview",
+            "analyzeCrop": "Analyze Crop",
+            "analyzing": "Analyzing...",
+            "englishResult": "English Result",
+            "marathiResult": "Marathi Result",
+            "hindiResult": "Hindi Result",
+            "uploadPrompt": "Upload a crop image to get analysis and recommendations",
+            "somethingWentWrong": "Something went wrong!",
+            "language": "Language"
+          },
           
            
             

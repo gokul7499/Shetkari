@@ -19,6 +19,22 @@
         "get_started": "सुरू करा",
         "contact_us": "आमच्याशी संपर्क साधा"
       },
+     "crops": {
+        "cropAnalyzer": "🌱 पिक विश्लेषक",
+        "getAnalysis": "इंग्रजी, मराठी आणि हिंदीमध्ये विश्लेषण मिळवा",
+        "uploadCropImage": "पिकाची प्रतिमा अपलोड करा",
+        "clickToUpload": "अपलोड करण्यासाठी क्लिक करा किंवा ड्रॅग आणि ड्रॉप करा",
+        "imageFormats": "PNG, JPG, JPEG (कमाल 5MB)",
+        "imagePreview": "प्रतिमा पूर्वावलोकन",
+        "analyzeCrop": "पिकाचे विश्लेषण करा",
+        "analyzing": "विश्लेषण करत आहे...",
+        "englishResult": "इंग्रजी निकाल",
+        "marathiResult": "मराठी निकाल",
+        "hindiResult": "हिंदी निकाल",
+        "uploadPrompt": "विश्लेषण आणि शिफारसी मिळविण्यासाठी पिकाची प्रतिमा अपलोड करा",
+        "somethingWentWrong": "काहीतरी चूक झाली!",
+        "language": "भाषा"
+      },
       
         "about": {
           "discover": "सर्विसनॉवसह जग कसे कार्य करते ते शोधा",

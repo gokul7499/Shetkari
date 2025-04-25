@@ -7,7 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Footer = () => {
-  
   const [email, setEmail] = useState('');
   const [visitorCount, setVisitorCount] = useState(0);
   const backendURL = "https://website-backend-royal.onrender.com/api"; // Backend API URL
@@ -23,7 +22,7 @@ const Footer = () => {
         localStorage.setItem("hasVisited", "true"); // Mark as visited
       } catch (error) {
         console.error("Error recording visitor:", error);
-        toast.error("Failed to record visitor.");
+        // Don't show toast for visitor count errors
       }
     } else {
       // Fetch visitor count without incrementing
@@ -38,7 +37,7 @@ const Footer = () => {
       setVisitorCount(response.data.totalVisitors || 0);
     } catch (error) {
       console.error("Error fetching visitor count:", error);
-      toast.error("Failed to fetch visitor count.");
+      // Don't show toast for visitor count errors
     }
   };
 
@@ -46,13 +45,6 @@ const Footer = () => {
     recordVisitor();
   }, []);
 
-
-  // Increment visitor count on page load
-
-  // Fetch visitor count on mount
-  ;
-
-  // Validate email input
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
@@ -73,10 +65,10 @@ const Footer = () => {
     }
 
     try {
-      const response = await axios.post(`${backendURL}/subscribe`, { email }); // Send email to backend
+      const response = await axios.post(`${backendURL}/subscribe`, { email });
       if (response.status === 200) {
         toast.success('Subscribed successfully!');
-        setEmail(''); // Clear email input
+        setEmail('');
       }
     } catch (error) {
       console.error('Error subscribing email:', error);
@@ -102,7 +94,6 @@ const Footer = () => {
             <li>Email: info@royalshetkari.com</li>
             <li>Phone: +91 12345 67890</li>
             <li>Address: Sangamner, Maharashtra, India</li>
-            
           </ul>
         </div>
 
@@ -148,7 +139,7 @@ const Footer = () => {
         <p className="text-light">&copy; {new Date().getFullYear()} Royal Shetkari IT Company. All rights reserved.</p>
       </div>
 
-      <ToastContainer /> {/* Toast notifications */}
+      <ToastContainer />
     </footer>
   );
 };

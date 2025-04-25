@@ -19,6 +19,22 @@
         "get_started": "शुरू करें",
         "contact_us": "हमसे संपर्क करें"
       },
+     "crops": {
+        "cropAnalyzer": "🌱 फसल विश्लेषक",
+        "getAnalysis": "अंग्रेजी, मराठी और हिंदी में विश्लेषण प्राप्त करें",
+        "uploadCropImage": "फसल की छवि अपलोड करें",
+        "clickToUpload": "अपलोड करने के लिए क्लिक करें या ड्रैग और ड्रॉप करें",
+        "imageFormats": "PNG, JPG, JPEG (अधिकतम 5MB)",
+        "imagePreview": "छवि पूर्वावलोकन",
+        "analyzeCrop": "फसल का विश्लेषण करें",
+        "analyzing": "विश्लेषण कर रहा है...",
+        "englishResult": "अंग्रेजी परिणाम",
+        "marathiResult": "मराठी परिणाम",
+        "hindiResult": "हिंदी परिणाम",
+        "uploadPrompt": "विश्लेषण और सिफारिशें प्राप्त करने के लिए फसल की छवि अपलोड करें",
+        "somethingWentWrong": "कुछ गलत हो गया!",
+        "language": "भाषा"
+      },
       
         "about": {
           "discover": "ServiceNow के साथ जानें कि दुनिया कैसे काम करती है",
