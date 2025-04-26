@@ -23,10 +23,18 @@ function Crops() {
     try {
       setLoading(true);
       const res = await axios.post("https://website-backend-royal.onrender.com/analyze", formData);
-      setEnglishResult(res.data.english);
-      setMarathiResult(res.data.marathi);
+
+      console.log("Server Response:", res.data); // Debugging purpose
+
+      if (res.data) {
+        setEnglishResult(res.data.english || "No English information available.");
+        setMarathiResult(res.data.marathi || "मराठी माहिती उपलब्ध नाही.");
+      } else {
+        setEnglishResult("No English information available.");
+        setMarathiResult("मराठी माहिती उपलब्ध नाही.");
+      }
     } catch (err) {
-      alert("Something went wrong!");
+      alert("Something went wrong while analyzing the image.");
       console.error(err);
     } finally {
       setLoading(false);
@@ -39,19 +47,18 @@ function Crops() {
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-green-500 to-teal-600 p-6 text-center">
-            <h1 className="text-3xl font-bold text-white">🌱 Crop Analyzer</h1>
-            <p className="text-green-100 mt-2">Get analysis in English and मराठी</p>
+            <h1 className="text-3xl font-bold text-white">🌾 पिक रोग निदान प्रणाली</h1>
+            <p className="text-green-100 mt-2">Get Analysis in English and मराठी</p>
           </div>
 
-          {/* Main Content */}
+          {/* Upload Section */}
           <div className="p-6 md:p-8">
-            {/* Upload Section */}
             <div className="mb-8">
               <label className="block text-lg font-medium text-gray-700 mb-3">
                 Upload Crop Image
               </label>
               <div className="flex items-center justify-center w-full">
-                <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors duration-200">
+                <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <svg
                       className="w-10 h-10 mb-3 text-gray-400"
@@ -70,9 +77,7 @@ function Crops() {
                     <p className="mb-2 text-sm text-gray-500">
                       <span className="font-semibold">Click to upload</span> or drag and drop
                     </p>
-                    <p className="text-xs text-gray-500">
-                      PNG, JPG, JPEG (MAX. 5MB)
-                    </p>
+                    <p className="text-xs text-gray-500">PNG, JPG, JPEG (MAX. 5MB)</p>
                   </div>
                   <input
                     type="file"
@@ -84,7 +89,7 @@ function Crops() {
               </div>
             </div>
 
-            {/* Preview Section */}
+            {/* Preview */}
             {preview && (
               <div className="mb-8 text-center">
                 <h2 className="text-lg font-medium text-gray-700 mb-3">Image Preview</h2>
@@ -142,56 +147,17 @@ function Crops() {
             {/* Results Section */}
             {(englishResult || marathiResult) && (
               <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-6">
+                
                 {/* English Result */}
                 <div className="bg-green-50 border border-green-100 rounded-xl p-6 shadow-sm">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-green-100 p-2 rounded-full mr-3">
-                      <svg
-                        className="w-6 h-6 text-green-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800">English Result</h3>
-                  </div>
-                  <div className="text-gray-700 whitespace-pre-line">
-                    {englishResult}
-                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">📝 English Result</h3>
+                  <p className="text-gray-700 whitespace-pre-line">{englishResult}</p>
                 </div>
 
                 {/* Marathi Result */}
                 <div className="bg-teal-50 border border-teal-100 rounded-xl p-6 shadow-sm">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-teal-100 p-2 rounded-full mr-3">
-                      <svg
-                        className="w-6 h-6 text-teal-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                        ></path>
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800">मराठी परिणाम</h3>
-                  </div>
-                  <div className="text-gray-700 whitespace-pre-line">
-                    {marathiResult}
-                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">📜 मराठी माहिती</h3>
+                  <p className="text-gray-700 whitespace-pre-line">{marathiResult}</p>
                 </div>
               </div>
             )}
@@ -200,7 +166,7 @@ function Crops() {
           {/* Footer */}
           <div className="bg-gray-50 px-6 py-4 text-center">
             <p className="text-sm text-gray-500">
-              Upload a crop image to get analysis and recommendations
+              Upload a crop image to get disease details and treatment suggestions in English and मराठी.
             </p>
           </div>
         </div>
